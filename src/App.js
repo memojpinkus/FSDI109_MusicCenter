@@ -7,6 +7,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.min.js";
 import About from "./components/about";
 import Cart from "./components/cart.jsx";
+import Admin from "./components/admin.jsx"
 
 import {BrowserRouter, Routes, Route} from "react-router-dom"
 import Home from './components/Home.jsx';
@@ -21,6 +22,7 @@ function App() {
             <Route path="/catalog" element = {<Catalog/>}></Route>
             <Route path="/cart" element={<Cart/>}></Route>
             <Route path="/about" element = {<About/>}></Route>
+            <Route path="/admin" element={<Admin/>}></Route>
           </Routes>
 
           <Footer></Footer>

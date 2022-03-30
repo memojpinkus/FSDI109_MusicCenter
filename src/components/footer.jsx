@@ -7,3 +7,13 @@ const Footer = () => {
 };
 
 export default Footer;
+
+/**
+ * 
+ * Adming page:
+ * 
+ * create a component (Admin)
+ * register the url /admin
+ * register a menu item for item
+ * 
+ */

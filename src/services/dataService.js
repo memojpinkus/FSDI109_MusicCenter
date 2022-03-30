@@ -49,6 +49,14 @@ class DataService{
         return catalog;
     }
 
+    saveProduct(prod){
+        console.log("Saving prod to server");
+    }
+
+    saveCouponCode(coupon){
+        console.log("Saving coupon to server");
+    }
+
 }
 
 export default DataService;
