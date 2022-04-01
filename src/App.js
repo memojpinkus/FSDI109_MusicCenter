@@ -7,13 +7,15 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.min.js";
 import About from "./components/about";
 import Cart from "./components/cart.jsx";
-import Admin from "./components/admin.jsx"
-
-import {BrowserRouter, Routes, Route} from "react-router-dom"
+import Admin from "./components/admin.jsx";
+import {BrowserRouter, Routes, Route} from "react-router-dom";
 import Home from './components/Home.jsx';
+import GlobalState from "./context/globalState.jsx";
 
 function App() {
-  return(<div className = "App">
+  return(
+    <div className = "App">
+      <GlobalState>
         <BrowserRouter>
           <NavBar></NavBar>
 
@@ -27,7 +29,8 @@ function App() {
 
           <Footer></Footer>
         </BrowserRouter>
-        </div>);
+      </GlobalState>
+    </div>);
 }
 
 export default App;

@@ -8,6 +8,7 @@ const Catalog = () => {
 
         const loadCatalog = () => {
                 console.log("Data retrieved");
+                
                 let service = new DataService();
                 let data = service.getCatalog();
                 setProducts(data);
