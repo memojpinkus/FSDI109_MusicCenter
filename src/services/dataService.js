@@ -1,3 +1,5 @@
+import axios from "axios";
+
 var catalog=[
     {
         _id:"fender_strat",
@@ -41,20 +43,28 @@ var catalog=[
 
 class DataService{
 
-    getCatalog(){
+    async getCatalog(){
         //retrieve the data from the server 
         // var catalog = request();
+        let resp = await axios.get("http://127.0.0.1:5000/api/catalog");
+        return resp.data;
 
         //mock the data
-        return catalog;
+        //return catalog;
+    }
+
+    async getCoupons(){
+        let resp = await axios.get("http://127.0.0.1:5000/api/couponCode");
+        return resp.data;
     }
 
     saveProduct(prod){
         console.log("Saving prod to server");
     }
 
-    saveCouponCode(coupon){
-        console.log("Saving coupon to server");
+    async saveCouponCode(code){
+        let resp = await axios.post("http://127.0.0.1:5000/api/couponCode", code)
+        return resp.data;
     }
 
 }

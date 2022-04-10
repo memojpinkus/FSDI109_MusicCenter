@@ -6,17 +6,17 @@ import DataService from "../services/dataService";
 const Catalog = () => {
         let [products, setProducts] = useState([]);
 
-        const loadCatalog = () => {
+        const loadCatalog = async () => {
                 console.log("Data retrieved");
                 
                 let service = new DataService();
-                let data = service.getCatalog();
+                let data = await service.getCatalog();
                 setProducts(data);
         }
 
         useEffect( () =>{
                 loadCatalog();
-        });
+        }, []);
 
         return(<div className="catalog">
                 <h2>We have {products.length} products!</h2>
